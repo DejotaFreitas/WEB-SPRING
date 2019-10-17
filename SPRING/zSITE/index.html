@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Spring Teste</title>
+    <style media="screen">
+      @import "css/css.css";
+    </style>
+    <script src="js/core/ajax.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <h1>SPRING</h1>
+
+    <a href="#home">HOME </a>
+    &nbsp;
+    <a href="#cadastro"> CADASTRO </a>
+    <br>
+
+    <div id="corpo">
+
+    </div>
+
+
+    <div id="resposta">
+
+    </div>
+
+    <script type="text/javascript">
+      RequestAjaxAsync(
+        function(resposta) {
+          try {
+            // resposta = JSON.parse(resposta);
+            document.getElementById("resposta").innerHTML = resposta;
+          } catch (e) {
+            console.log(e);
+          }
+        },
+        "http://localhost:8080/usuario/");
+    </script>
+
+    <script src="js/core/navegacao.js" charset="utf-8"></script>
+
+
+  </body>
+</html>
